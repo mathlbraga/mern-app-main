@@ -1,6 +1,6 @@
 const { MongoClient } = require("mongodb")
 
-const Db = 'mongodb+srv://braga:senha5@cluster0.pxmjl1k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+const Db = 'SECRET'
 
 const client = new MongoClient(Db, {
     useNewUrlParser: true,
