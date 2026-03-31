@@ -33,7 +33,7 @@ export default function UserList() {
             const response = await fetch(`${REACT_APP_YOUR_HOSTNAME}/user/`)
 
             if (!response.ok) {
-                const message = `An error occurred: ${response.statusText}`
+                const message = `Um erro ocorreu: ${response.statusText}`
                 window.alert(message)
                 return
             }
@@ -48,7 +48,7 @@ export default function UserList() {
     }, [users.length])
 
     async function deleteRecord(id) {
-        const result = window.confirm("Will this employee be removed from the list?")
+        const result = window.confirm("Deseja remover desta lista?")
         if (!result) {
             return
         }
