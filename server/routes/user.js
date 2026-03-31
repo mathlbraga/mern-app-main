@@ -38,7 +38,7 @@ userRoutes.route('/user/login').post(async function (req, res) {
 userRoutes.route('/user/register').post(async function (req, res) {
     const db_connect = dbo.getDb()
 
-    const { name, email, senha, function: tipo } = req.body;
+    const { nome, email, senha, function: tipo } = req.body;
 
     try {
         const userExistente = await db_connect.collection("users").findOne({ email })
@@ -50,7 +50,7 @@ userRoutes.route('/user/register').post(async function (req, res) {
         const salt = await bcrypt.genSalt(10);
         const senhaHash = await bcrypt.hash(senha, salt);
         const novoUsuario = {
-            name,
+            name: nome,
             email,
             senha: senhaHash,
             function: tipo, // Tipo de perfil do usuário (ADM ou User)
